@@ -13,7 +13,8 @@ namespace HR.LeaveManagement.Application.Contracts.MappingProfiles
     {
         public LeaveTypeProfile()
         {
-            CreateMap<LeaveTypeDetailsDto, LeaveType>().ReverseMap();
+            CreateMap<LeaveTypeDto, LeaveType>().ReverseMap();
+            CreateMap<LeaveType, LeaveTypeDetailsDto>();
         }
     }
 }
