@@ -15,6 +15,6 @@ namespace HR.LeaveManagement.Application.Features.LeaveType.Queries.GetAllLeaveT
 /// <summary>
 /// record is imutable
 /// </summary>
-public record GetLeaveTypeQuery : IRequest<List<LeaveTypeDto>>;
+public record GetLeaveTypesQuery : IRequest<List<LeaveTypeDto>>;
 
 

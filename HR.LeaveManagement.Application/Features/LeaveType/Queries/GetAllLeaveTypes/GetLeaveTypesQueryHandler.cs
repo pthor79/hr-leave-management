@@ -2,15 +2,10 @@
 using HR.LeaveManagement.Application.Contracts.Logging;
 using HR.LeaveManagement.Application.Contracts.Persistence;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HR.LeaveManagement.Application.Features.LeaveType.Queries.GetAllLeaveTypes;
 
-public class GetLeaveTypesQueryHandler : IRequestHandler<GetLeaveTypeQuery, List<LeaveTypeDto>>
+public class GetLeaveTypesQueryHandler : IRequestHandler<GetLeaveTypesQuery, List<LeaveTypeDto>>
 {
     private readonly IMapper _mapper;
     private readonly ILeaveTypeRepository _leaveTypeRepository;
@@ -25,7 +20,7 @@ public class GetLeaveTypesQueryHandler : IRequestHandler<GetLeaveTypeQuery, List
         _logger = logger;
     }
 
-    public async Task<List<LeaveTypeDto>> Handle(GetLeaveTypeQuery request, CancellationToken cancellationToken)
+    public async Task<List<LeaveTypeDto>> Handle(GetLeaveTypesQuery request, CancellationToken cancellationToken)
     {
         //Query the database
         var leaveTypes = await _leaveTypeRepository.GetAsync();
